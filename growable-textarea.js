@@ -23,16 +23,14 @@ angular.module('growable-textarea-directive', ['style-sheet-factory'])
                 }
 
                 // Get the border eight of the textarea element.
-                var style = window.getComputedStyle($element[0]);
-                var borderOffset = parseInt(style.borderTop) + parseInt(style.borderBottom);
+                var style = window.getComputedStyle($element[0], null);
+                var borderOffset = parseInt(style['border-top-width']) + parseInt(style['border-bottom-width']);
 
                 // Resize the textarea to be the height of its content, plus any border height.
                 var changeHandler = function(event) {
                     $element[0].style.height = '0px';
                     var textHeight = $element[0].scrollHeight;
-
                     $element[0].style.height = textHeight + borderOffset + 'px';
-                    $element[0].scrollTop = 0;
                 };
 
                 // Reize the textarea on any event that may change the content.
