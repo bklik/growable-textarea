@@ -32,6 +32,9 @@ angular.module('growable-textarea-directive', ['style-sheet-factory'])
                     var textHeight = $element[0].scrollHeight;
                     $element[0].style.height = textHeight + borderOffset + 'px';
                 };
+                
+                // Size the textarea to it's starting content.
+                changeHandler(null);
 
                 // Reize the textarea on any event that may change the content.
                 $element.bind('keydown', changeHandler);
