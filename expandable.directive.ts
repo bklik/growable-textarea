@@ -1,5 +1,15 @@
 import { Directive, ElementRef, OnInit } from '@angular/core';
 
+/***********************************************************************
+Expandable Textarea Directive
+Author: Brenton Klik
+Prerequisites:
+ - Angular 2
+
+Description:
+Allows the height of the textarea to always match the height of
+the content.
+/**********************************************************************/
 @Directive({
   selector: 'textarea[expandable]',
   host: {
